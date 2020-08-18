@@ -22,3 +22,31 @@
 
   http://www.imparareaprogrammare.it
 */
+
+var input = 6
+
+switch (input) {
+  case input=1:
+    console.log('lunedi')
+    break;
+  case input=2: 
+    console.log('martedì')
+    break;
+  case input=3: 
+    console.log('mercoledì')
+    break;
+  case input=4: 
+    console.log('giovedì')
+    break;
+  case input=5: 
+    console.log('venerdì')
+    break;
+  case input=6: 
+    console.log('sabato')
+    break;
+  case input=7: 
+    console.log('domenica')
+    break;
+  default:
+    console.log('Errore! Giorno della settimana non valido!')
+}

@@ -45,3 +45,107 @@
 
   http://www.imparareaprogrammare.it
 */
+var month = 'marzo';
+var weekday = 1;
+
+
+switch (month) {
+case 'gennaio':
+case 'febbraio':
+case 'marzo':
+case 'aprile':
+case 'maggio':
+case 'giugno':
+case 'luglio':
+case 'agosto':
+case 'settembre':
+case 'ottobre':
+case 'novembre':
+case 'dicembre':
+  var monthdays;
+  if (month == 'novembre' || month == 'aprile' || month == 'giugno' || month == 'settembre' ) {
+    monthdays = 30
+  }
+  else if (month == 'febbraio') {
+    monthdays = 28
+  }
+  else {
+    monthdays = 31
+  }
+   
+  var calendar = 'Output: ';
+  var day
+  var weekcount = weekday
+  
+  console.log('mese: ' +month)
+  console.log('numero giorni: ' +monthdays)
+  console.log('giorno settimana: ' +weekday)
+  
+  for (let i = 1; i <= monthdays; i++) {
+    
+    if (i == 1) {
+      switch (weekcount) {
+        case 0:
+          day = 'Lun ';
+          break;
+        case 1:
+          day = 'Mar ';
+          break;
+        case 2:
+          day = 'Mer ';
+          break;
+        case 3:
+          day = 'Gio ';
+          break;
+        case 4:
+          day = 'Ven ';
+          break;
+        case 5:
+          day = 'Sab ';
+          break;
+        case 6:
+          day = 'Dom ';
+          break;      
+      }
+      calendar += day + i + '\n';
+        
+    }
+    else {
+      if (weekcount<7) {
+        weekcount++
+      }
+      else {
+        weekcount = 0
+      }
+      switch (weekcount) {
+        case 0:
+          day = 'Lun ';
+          break;
+        case 1:
+          day = 'Mar ';
+          break;
+        case 2:
+          day = 'Mer ';
+          break;
+        case 3:
+          day = 'Gio ';
+          break;
+        case 4:
+          day = 'Ven ';
+          break;
+        case 5:
+          day = 'Sab ';
+          break;
+        case 6:
+          day = 'Dom ';
+          break;      
+      }
+      calendar += '\t'.repeat(2) + day + i  + '\n';
+    }
+  }
+break;
+default: {
+  console.log('nome del mese errato!')
+}
+}
+console.log(calendar);

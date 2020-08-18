@@ -14,3 +14,33 @@
 
   http://www.imparareaprogrammare.it
 */
+var dicepull = prompt('Quanti tiri saranno effettuati?', 'indicare il numero dei tiri di dado');
+
+console.log(`Verranno effettuati ${dicepull} tiri di dado`);
+var diceplayer1
+var diceplayer2
+var sumplayer1 = 0;
+var sumplayer2 = 0;
+
+for (let i=0; i<dicepull; i++) {
+  diceplayer1 = Math.floor((Math.random() * (6) + 1));
+  diceplayer2 = Math.floor((Math.random() * (6) + 1));
+  console.log(`Tiro ${i+1}!`)
+  console.log('il giocatore 1 ha tirato: '+diceplayer1);
+  console.log('il giocatore 2 ha tirato: '+diceplayer2);
+  sumplayer1 += diceplayer1
+  sumplayer2 += diceplayer2
+}
+console.log('Ecco il risultato!')
+console.log('il punteggio totale del giocatore 1 è: ' + sumplayer1)
+console.log('il punteggio totale del giocatore 2 è: ' + sumplayer2)
+
+if (sumplayer1>sumplayer2) {
+  console.log('il giocatore 1 vince!');
+}
+else if (sumplayer1<sumplayer2) {
+  console.log('il giocatore 2 vince!');
+}
+else {
+  console.log('pari e patta!');
+}  

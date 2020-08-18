@@ -19,3 +19,14 @@
 
   http://www.imparareaprogrammare.it
 */
+var n = '';
+var limit = 100;
+
+for (let i = 1; i <= limit; i++) {
+  n += i + ' ';
+  if (i%10==0){
+    n += '\n';
+  }
+}
+
+console.log('output:'+n);

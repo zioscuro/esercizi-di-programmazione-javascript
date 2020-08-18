@@ -10,3 +10,6 @@
 
   http://www.imparareaprogrammare.it
 */
+
+console.log('maggiore = ' +Math.max(3, -1, 4, -2));
+console.log('minore = ' +Math.min(3, -1, 4, -2));

@@ -17,3 +17,12 @@
 
   http://www.imparareaprogrammare.it
 */
+
+var Cats = 44
+var CatsRow = 6
+
+var RowNumber = Math.ceil(Cats/CatsRow)
+var MissingCats = (RowNumber*CatsRow)-Cats
+
+console.log('numero di file: ' + RowNumber)
+console.log('gatti mancanti: ' + MissingCats)

@@ -8,3 +8,12 @@
 
   http://www.imparareaprogrammare.it
 */
+var input = 5
+var limit = 10
+var total = 0
+
+console.log('stampa la tabellina del '+input)
+
+for (let i = 0; i <= limit; i++) {
+    console.log(input*i)
+}
