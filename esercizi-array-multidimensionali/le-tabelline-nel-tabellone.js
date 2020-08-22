@@ -11,3 +11,24 @@
     
   http://www.imparareaprogrammare.it
 */
+
+//definisce le variabili e una matrice di intestazione
+var header = ['x',0,1,2,3,4,5,6,7,8,9,10];
+var billboard = [];
+
+//calcola il tabellone sommando l'intestazione nella prima riga e colonna
+for (let x=0; x<12; x++) {
+  billboard[x]=[];
+  for (let y=0; y<12; y++) {
+    billboard[0][y]=header[y];
+    billboard[x][0]=header[x];
+    if (x!=0 && y!=0) {
+      billboard[x][y]=(x-1)*(y-1)
+    }
+  }
+}
+
+//stampa il risultato sostituendo il separatore
+for (let x=0; x<12; x++){
+  console.log(billboard[x].join(' | '))
+}

@@ -8,3 +8,13 @@
 
   http://www.imparareaprogrammare.it
 */
+
+//definisce la funzione
+function randX(x) {
+  return Math.floor(Math.random() * (x+1));
+}
+
+//definisce la variabile e stampa il risultato
+var num = 24;
+console.log(`Input: ${num}`);
+console.log(`Output: ${randX(num)}`);

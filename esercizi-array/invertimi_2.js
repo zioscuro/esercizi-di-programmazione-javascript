@@ -18,14 +18,15 @@
 var Num = 5;
 
 var array1 = new Array(Num);
+var array2 = new Array(Num);
 
 for (let i=0; i<Num; i++) {
-  array1[i]=Math.floor((Math.random() * (100)));
+  array1[i] = Math.floor((Math.random() * (100)));
+  array2[(Num-i)-1] = array1[i]
 }
 
 console.log('array generato:');
 console.log(array1);
 
-var array2 = array1.reverse();
 console.log('array invertito:');
 console.log(array2);

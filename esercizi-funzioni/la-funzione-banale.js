@@ -16,3 +16,25 @@
     
   http://www.imparareaprogrammare.it
 */
+
+//definisce le due variabili
+var n = 3;
+var m = 3;
+
+//definisce la funzione di identità
+function identity(x,y) {
+  if (x===y){
+    return 'TRUE';
+  }
+  else {
+    return 'FALSE';
+  }
+}
+
+//definisce le stringhe di input e output
+var input = `Input: n = ${n}, m = ${m}`;
+var output = 'Output: '+identity(n,m);
+
+//stampa il risultato
+console.log(input);
+console.log(output);

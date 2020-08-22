@@ -23,8 +23,8 @@ var sumplayer1 = 0;
 var sumplayer2 = 0;
 
 for (let i=0; i<dicepull; i++) {
-  diceplayer1 = Math.floor((Math.random() * (6) + 1));
-  diceplayer2 = Math.floor((Math.random() * (6) + 1));
+  diceplayer1 = Math.floor((Math.random() * (6-1) + 1));
+  diceplayer2 = Math.floor((Math.random() * (6-1) + 1));
   console.log(`Tiro ${i+1}!`)
   console.log('il giocatore 1 ha tirato: '+diceplayer1);
   console.log('il giocatore 2 ha tirato: '+diceplayer2);

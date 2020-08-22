@@ -12,3 +12,35 @@
 
   http://www.imparareaprogrammare.it
 */
+var Num = 5;
+var a = new Array(Num);
+
+for (let i=0; i<Num; i++) {
+  a[i]=Math.floor((Math.random() * (100)));
+}
+
+var media = 0;
+var sum = 0;
+var minors = [];
+var minmed = 0;
+var maxmed = 0;
+
+console.log('input: a = [' + a + ']')
+
+for (let i=0; i<a.length; i++) {
+  sum += a[i];
+}
+media = sum/a.length;
+
+for (let i=0; i<a.length; i++) {
+  if (a[i]<media) {
+    minors.push(a[i]);
+    minmed++
+  }
+  else if (a[i]>media) {
+    maxmed++
+  }
+}
+
+console.log('output: media = ' + media + ', valori minori = [' + minors + ']');
+console.log('ci sono ' + minmed + ' valori minori della media e ' + maxmed + ' valori maggiori della media');

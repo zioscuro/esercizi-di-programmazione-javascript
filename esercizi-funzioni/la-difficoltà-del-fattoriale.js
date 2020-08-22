@@ -12,3 +12,19 @@
 
   http://www.imparareaprogrammare.it
 */
+
+//definisce la funzione del calcolo fattoriale
+function fact(x){
+  var num = 1;
+  for (let i=1; i<=x; i++) {
+    num = num*i;
+  }
+  return num;
+}
+
+//definisce la variabile in input
+var n = 5;
+
+//stampa il risultato
+console.log(`Input: n = ${n}`);
+console.log(`Output: ${fact(n)}`);

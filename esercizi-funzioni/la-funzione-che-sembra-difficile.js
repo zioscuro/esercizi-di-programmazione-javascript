@@ -10,3 +10,18 @@
     
   http://www.imparareaprogrammare.it
 */
+
+//definisce la funzione
+function slicer(x,y) {
+  var num=x.toString()
+  if (y>num.length) {
+    return 0
+  }   
+  return num.slice((num.length-y),(num.length-y+1)) 
+}
+
+//prende due numeri in input e stampa il risultato
+var N = 123456
+var K = 3
+console.log(`Input: N = ${N}, K = ${K}`)
+console.log(`Output: ${slicer(N,K)}`)

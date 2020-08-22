@@ -19,3 +19,77 @@
 
   http://www.imparareaprogrammare.it
 */
+var billboard = []
+var sheet = [40,39,5,3,31,43,16,48,67,81]
+var hit = 0
+
+//genera un tabellone di numeri casuali
+for (let i=0; i<10; i++) {
+  billboard.push(Math.floor((Math.random() * (90-1)+1)));
+}
+
+//trova e rigenera eventuali numeri uguali nel tabellone
+for (let i=0; i<10; i++) {
+  for (let x=0; x<10; x++) {
+    if (i != x && billboard[i] === billboard[x]) {
+      billboard[x]=(Math.floor((Math.random() * (90-1)+1)))
+    }
+  }
+}
+
+/* OPZIONALE
+//rigenera la scheda dell'utente sostituendo eventuali numeri uguali
+sheet = []
+
+for (let y=0; y<10; y++) {
+  sheet.push(Math.floor((Math.random() * (90-1)+1)));
+}
+
+for (let i=0; i<10; i++) {
+  for (let x=0; x<10; x++) {
+    if (i != x && sheet[i] === sheet[x]) {
+      sheet[x]=(Math.floor((Math.random() * (90-1)+1)))
+    }
+  }
+}
+*/
+
+//riepiloga gli array generati
+console.log('numeri estratti: [' + billboard + ']');
+console.log('la tua scheda: [' + sheet + ']');
+
+//confronta i numri estratti con quelli dell'utente 
+for (let i=0; i<10; i++) {
+  for (let x=0; x<10; x++) {
+    if (billboard[i] === sheet[x]) {
+      hit = hit + 1;
+    }
+  }
+}
+
+console.log('hits: '+hit);
+
+//stampa il risultato 
+switch (hit) {
+  case 2: 
+  console.log('Hai fatto ambo');
+  break;
+  case 3: 
+  console.log('Hai fatto terna');
+  break;
+  case 4: 
+  console.log('Hai fatto quaterna');
+  break;
+  case 5:
+  case 6:
+  case 7:
+  case 8:
+  case 9: 
+  console.log('Hai fatto cinquina');
+  break;
+  case 10: 
+  console.log('Hai fatto tombola');
+  break;
+  default:
+    console.log('mi dispiace, hai perso!');
+}

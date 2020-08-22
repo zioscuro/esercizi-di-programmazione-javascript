@@ -14,3 +14,24 @@
           
   http://www.imparareaprogrammare.it
 */
+
+//definisce la funzione che conta i giorni
+function date(day,month) {
+  var counter = 0;
+  var monthdays = [31,29,31,30,31,30,31,31,30,31,30,31];
+  for (let i=0; i<month; i++) {    
+    if (i<month-1) {
+      counter += monthdays[i];
+    }
+    else {
+      counter += day;
+    }
+  }
+  return counter
+}
+
+//definisce le variabili e stampa il risultato
+var giorno = 5;
+var mese = 2;
+console.log(`Input: giorno = ${giorno}, mese = ${mese}`);
+console.log(`Output: ${date(giorno,mese)}`);
