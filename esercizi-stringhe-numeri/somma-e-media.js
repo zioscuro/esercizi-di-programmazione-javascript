@@ -8,14 +8,14 @@
   
   http://www.imparareaprogrammare.it
 */
+
+//definisce le variabili dei cinque numeri
 var a = 1;
 var b = 2;
 var c = 3;
 var d = 4;
 var e = 5;
 
-var somma = a+b+c+d+e
-var media = somma/5
-
-console.log('somma: '+somma)
-console.log('media: '+media)
+//calcola somma e media e stampa il risultato
+console.log(`Input: a = ${a}, b = ${b}, c= ${c}, d = ${d}, e = ${e}`);
+console.log(`Output: somma = ${a+b+c+d+e}, media = ${(a+b+c+d+e)/5}`);

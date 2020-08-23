@@ -12,12 +12,15 @@
 
   http://www.imparareaprogrammare.it
 */
-var time = 12560
 
-var hours = Math.floor(time/3600)
-var minutes = Math.floor(time/60)-(hours*60)
-var seconds = time-(hours*3600)-(minutes*60)
+//definisce la variabile in input
+var time = 12560;
 
-console.log('ore: ' + hours)
-console.log('minuti: ' + minutes)
-console.log('secondi: ' + seconds)
+//calcola all'interno di tre variabili ore, minuti e secondi
+var hours = Math.floor(time/3600);
+var minutes = Math.floor(time/60)-(hours*60);
+var seconds = time-(hours*3600)-(minutes*60);
+
+//stampa il risultato
+console.log(`Input: ${time}`);
+console.log(`Output: ${hours} ore, ${minutes} minuti e ${seconds} secondi.`);

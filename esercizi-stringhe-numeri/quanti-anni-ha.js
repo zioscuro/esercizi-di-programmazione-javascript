@@ -12,11 +12,10 @@
   http://www.imparareaprogrammare.it
 */
 
-var CurrentYear = 2018
-var BirthYear =1991
+//definisce le variabili per l'anno corrente e quello di nascita
+var CurrentYear = 2018;
+var BirthYear = 1991;
 
-var CurrentAge = CurrentYear-BirthYear
-var YearsTo100 = 100-CurrentAge
-
-console.log('età: '+ CurrentAge)
-console.log('anni mancanti: '+ YearsTo100)
+//calcola età e anni mancanti e stampa il risultato
+console.log(`Input: anno corrente = ${CurrentYear}, anno di nascita = ${BirthYear}`);
+console.log(`Output: età = ${CurrentYear-BirthYear}, anni mancanti = ${100-(CurrentYear-BirthYear)}`);
