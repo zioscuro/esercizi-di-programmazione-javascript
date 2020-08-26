@@ -32,29 +32,31 @@
   http://www.imparareaprogrammare.it
 */
 
-
+//funzione che crea un oggetto per una nuova guardia
 function officer(newName,newOfficerID) {
   this.name = `${newName}`;
   this.officerID = `${newOfficerID}`;
 };
-
+//funzione che crea un oggetto per un nuovo criminale
 function criminal(newName,newID) {
   this.name = `${newName}`;
   this.criminalID = `${newID}`;
-  this.state = 'imprigionato'
+  this.state = 'imprigionato';
 };
-
+//funzione che crea un oggetto per un nuovo fascicolo
 function file(newID,newImprisonDate,newReleaseDate,newCrime) {
   this.criminalID = `${newID}`;
   this.imprisonDate = `${newImprisonDate}`;
   this.releaseDate = `${newReleaseDate}`;
   this.crime = `${newCrime}`;  
 };
-
+//oggetto carcere di Gotham
 var jail = {
+  //proprietà che contengono in degli array tutte le guardie, i criminali e i fascicoli
   officers: [],
   criminals: [],  
   files: [],
+  //metodi per l'inserimento di nuove guardie, criminali e fascicoli
   newofficer: function(name,officerID) {
     this.officers.push(new officer(name,officerID));
   },
@@ -64,13 +66,14 @@ var jail = {
   newfile: function(ID,imprisonDate,releaseDate,crime) {
     this.files.push(new file(ID,imprisonDate,releaseDate,crime));
   },
+  //metodi per visualizzare tutte le guardie, i criminali e i fascicoli
   showofficers: function () {
     var temp = 'Elenco guardie \n';
     for (let i=0; i<this.officers.length; i++) {
       temp += `${this.officers[i].name} ID: ${this.officers[i].officerID}\n`;
     }
   return console.log(temp);
-  },
+  },  
   showcriminals: function () {
     var temp = 'Elenco criminali \n';
     for (let i=0; i<this.criminals.length; i++) {
@@ -85,13 +88,14 @@ var jail = {
     }
   return console.log(temp);
   },
-  searchfile: function (name, operation) {   
+  //metodo per effettuare ricerche nei fascicoli in base al nome del detenuto e della proprietà da cercare
+  searchfile: function (name, property) {   
     var temp = ''; 
     for (let i=0; i<this.criminals.length; i++) {
       if (this.criminals[i].name===name) {
         for (let x=0; x<this.files.length; x++) {
           if (this.criminals[i].criminalID===this.files[x].criminalID) {
-            switch(operation) {
+            switch(property) {
               case 'carcerazione':
                 temp = `Data Carcerazione: ${this.files[x].imprisonDate}`;
                 break;
@@ -105,12 +109,13 @@ var jail = {
                 temp = `Carcerazione: ${this.files[x].imprisonDate} Scarcerazione: ${this.files[x].releaseDate} Reato: ${this.files[x].crime}`;
                 break;
             }
-            return console.log(`Ricerca fascicolo - Detenuto: ${this.criminals[x].name} ID: ${this.criminals[x].criminalID}\n${temp}`)
+            return console.log(`Ricerca fascicolo - Detenuto: ${this.criminals[x].name} ID: ${this.criminals[x].criminalID} Oggetto ricerca: ${property}\n${temp}`)
           }
         }
       }
     }
   },
+  //metodi per segnalare l'evasione o il decesso di un criminale
   prisonbreak: function (name) {
     for (let i=0; i<this.criminals.length;i++) {
       if (this.criminals[i].name === name) {
@@ -125,6 +130,7 @@ var jail = {
       }
     }
   },
+  //metoto che richiama il riepilogo della situazione del carcere
   recap: function () {
     var imprisonedCount = 0;
     var escapedCount = 0;
@@ -137,53 +143,47 @@ var jail = {
     }    
     for (let i=0; i<this.criminals.length;i++) {
       if (this.criminals[i].state === 'evaso') {
-        escapedCount++
+        escapedCount++;
       }
     }    
     for (let i=0; i<this.criminals.length;i++) {
       if (this.criminals[i].state === 'deceduto') {
-        deadCount++
+        deadCount++;
       }
     }
-    temp += `Numero guardie: ${this.officers.length}\n`
-    temp += `Detenuti attuali: ${imprisonedCount}\n`
-    temp += `Detenuti evasi: ${escapedCount}\n`
-    temp += `Detenuti deceduti: ${deadCount}\n`
-    return console.log(`${temp}`)
+    temp += `Numero guardie: ${this.officers.length}\n`;
+    temp += `Detenuti attuali: ${imprisonedCount}\n`;
+    temp += `Detenuti evasi: ${escapedCount}\n`;
+    temp += `Detenuti deceduti: ${deadCount}\n`;
+    return console.log(`${temp}`);
   }
 }
 
-jail.newofficer('James Gordon','OFF-001')
-jail.newofficer('Arthur Dent','OFF-002')
-
-jail.newimprisoned('Joker','CRM-001')
-jail.newimprisoned('Bane','CRM-002')
-jail.newimprisoned('Pinguino','CRM-003')
-jail.newimprisoned('Killer Croc','CRM-004')
-
-jail.newfile('CRM-001','25-08-2020','25-08-2030','assassinio')
-jail.newfile('CRM-002','25-12-2015','25-12-2030','assassinio')
-jail.newfile('CRM-003','03-05-2018','03-05-2023','rapina')
-jail.newfile('CRM-004','12-09-2017','20-11-2020','rissa')
-
-jail.showofficers()
-
-jail.showcriminals()
-
-jail.showfiles()
-
-jail.searchfile('Pinguino','tutto')
-
+//prove di utilizzo dell'oggetto jail
+//aggiunta di nuove guardie
+jail.newofficer('James Gordon','OFF-001');
+jail.newofficer('Arthur Dent','OFF-002');
+//aggiunta di nuovi criminali
+jail.newimprisoned('Joker','CRM-001');
+jail.newimprisoned('Bane','CRM-002');
+jail.newimprisoned('Pinguino','CRM-003');
+jail.newimprisoned('Killer Croc','CRM-004');
+//aggiunta di nuovi fascicoli
+jail.newfile('CRM-001','25-08-2020','25-08-2030','assassinio');
+jail.newfile('CRM-002','25-12-2015','25-12-2030','assassinio');
+jail.newfile('CRM-003','03-05-2018','03-05-2023','rapina');
+jail.newfile('CRM-004','12-09-2017','20-11-2020','rissa');
+//richiama l'elenco di tutte le guardie, i criminali, i fascicoli
+jail.showofficers();
+jail.showcriminals();
+jail.showfiles();
+//effettua una ricerca nei fascicoli in base al nome del criminale e una propietà
+jail.searchfile('Pinguino','crimine')
+//segnala alcune evasioni e decessi
 jail.prisonbreak('Joker')
-
-jail.showcriminals()
-
-jail.decease('Bane')
-
-jail.showcriminals()
-
-jail.recap()
-
 jail.prisonbreak('Pinguino')
-
+jail.decease('Bane')
+//richiama l'elenco dei criminali aggiornato
+jail.showcriminals()
+//richiama il metodo della funzione di riepilogo
 jail.recap()
