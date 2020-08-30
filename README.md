@@ -1,5 +1,9 @@
 # Esercizi di programmazione gratuiti
-Ciao! in questo repo sono raccolte le mie soluzioni agli esercizi di programmazione javascript di Alberto Olla.
+Ciao! in questo repo sono raccolte le mie soluzioni agli esercizi di programmazione di Alberto Olla.
+  * JavaScript base (completo)
+  * HTML (in corso)
+
+## Scaletta esercizi javascript
 
 ## Esercizi su tipi di dato primari (stringhe e numeri)
 * **Facili**
